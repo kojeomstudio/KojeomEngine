@@ -7,6 +7,7 @@
     <ClCompile Include="DXHelper.cpp">
       <Filter>Util</Filter>
     </ClCompile>
+    <ClCompile Include="RendererCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Info.txt" />
@@ -21,11 +22,15 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{87416936-0b9e-41fc-8f0b-aef1013da0da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Core">
+      <UniqueIdentifier>{1fe38be7-a5b8-4588-91bb-aa9e4016dc9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DXHelper.h">
       <Filter>Util</Filter>
     </ClInclude>
+    <ClInclude Include="RendererCore.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TutorialShader.fxh">

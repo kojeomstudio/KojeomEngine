@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DXHelper.cpp" />
+    <ClCompile Include="RendererCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TutorialShader.fxh" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DXHelper.h" />
+    <ClInclude Include="RendererCore.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
