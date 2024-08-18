@@ -130,9 +130,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CTexture.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DXHelper.cpp" />
+    <ClCompile Include="ModelBase.cpp" />
+    <ClCompile Include="PrimitiveModel.cpp" />
     <ClCompile Include="RendererCore.cpp" />
+    <ClCompile Include="ShaderModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="TutorialShader.fxh" />
@@ -141,8 +144,12 @@
     <Text Include="Info.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DXHelper.h" />
+    <ClInclude Include="CTexture.h" />
+    <ClInclude Include="DXHeaderCollector.h" />
+    <ClInclude Include="ModelBase.h" />
+    <ClInclude Include="PrimitiveModel.h" />
     <ClInclude Include="RendererCore.h" />
+    <ClInclude Include="ShaderModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
