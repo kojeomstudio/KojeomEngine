@@ -8,6 +8,12 @@
  * Manages view and projection matrices,
  * handles camera position, rotation, and projection settings.
  */
+enum class ECameraProjectionType
+{
+    Perspective,
+    Orthographic
+};
+
 class KCamera
 {
 public:
@@ -86,6 +92,9 @@ public:
     float GetAspectRatio() const { return AspectRatio; }
     float GetNearZ() const { return NearZ; }
     float GetFarZ() const { return FarZ; }
+    float GetOrthoWidth() const { return OrthoWidth; }
+    float GetOrthoHeight() const { return OrthoHeight; }
+    ECameraProjectionType GetProjectionType() const { return ProjectionType; }
 
 private:
     /**
@@ -112,6 +121,9 @@ private:
     float AspectRatio;       // Aspect ratio
     float NearZ;             // Near clipping plane
     float FarZ;              // Far clipping plane
+    float OrthoWidth;        // Orthographic width
+    float OrthoHeight;       // Orthographic height
+    ECameraProjectionType ProjectionType; // Current projection type
 
     // Flags
     bool bViewMatrixDirty;   // Whether view matrix needs update

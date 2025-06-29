@@ -10,6 +10,9 @@ KCamera::KCamera()
     , AspectRatio(16.0f / 9.0f)
     , NearZ(0.1f)
     , FarZ(1000.0f)
+    , OrthoWidth(1.0f)
+    , OrthoHeight(1.0f)
+    , ProjectionType(ECameraProjectionType::Perspective)
     , bViewMatrixDirty(true)
     , bProjectionMatrixDirty(true)
 {
@@ -70,14 +73,17 @@ void KCamera::SetPerspective(float InFovY, float InAspectRatio, float InNearZ, f
     AspectRatio = InAspectRatio;
     NearZ = InNearZ;
     FarZ = InFarZ;
+    ProjectionType = ECameraProjectionType::Perspective;
     bProjectionMatrixDirty = true;
 }
 
 void KCamera::SetOrthographic(float Width, float Height, float InNearZ, float InFarZ)
 {
-    // For orthographic projection, we store the dimensions differently
+    OrthoWidth = Width;
+    OrthoHeight = Height;
     NearZ = InNearZ;
     FarZ = InFarZ;
+    ProjectionType = ECameraProjectionType::Orthographic;
     bProjectionMatrixDirty = true;
 }
 
@@ -97,7 +103,14 @@ void KCamera::UpdateMatrices()
 
     if (bProjectionMatrixDirty)
     {
-        ProjectionMatrix = XMMatrixPerspectiveFovLH(FovY, AspectRatio, NearZ, FarZ);
+        if (ProjectionType == ECameraProjectionType::Perspective)
+        {
+            ProjectionMatrix = XMMatrixPerspectiveFovLH(FovY, AspectRatio, NearZ, FarZ);
+        }
+        else
+        {
+            ProjectionMatrix = XMMatrixOrthographicLH(OrthoWidth, OrthoHeight, NearZ, FarZ);
+        }
         bProjectionMatrixDirty = false;
     }
 }
