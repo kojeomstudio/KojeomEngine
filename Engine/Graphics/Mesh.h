@@ -118,9 +118,9 @@ private:
 
 private:
     // DirectX resources
-    Microsoft::WRL::ComPtr<ID3D11Buffer> VertexBuffer;
-    Microsoft::WRL::ComPtr<ID3D11Buffer> IndexBuffer;
-    Microsoft::WRL::ComPtr<ID3D11Buffer> ConstantBuffer;
+    ComPtr<ID3D11Buffer> VertexBuffer;
+    ComPtr<ID3D11Buffer> IndexBuffer;
+    ComPtr<ID3D11Buffer> ConstantBuffer;
 
     // Mesh information
     UINT32 VertexCount = 0;

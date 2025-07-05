@@ -170,15 +170,15 @@ HRESULT KGraphicsDevice::CreateDevice()
 HRESULT KGraphicsDevice::CreateSwapChain(HWND InWindowHandle)
 {
     // Get DXGI factory
-    Microsoft::WRL::ComPtr<IDXGIDevice> DxgiDevice;
+    ComPtr<IDXGIDevice> DxgiDevice;
     HRESULT hr = Device->QueryInterface(IID_PPV_ARGS(&DxgiDevice));
     if (FAILED(hr)) return hr;
 
-    Microsoft::WRL::ComPtr<IDXGIAdapter> DxgiAdapter;
+    ComPtr<IDXGIAdapter> DxgiAdapter;
     hr = DxgiDevice->GetAdapter(&DxgiAdapter);
     if (FAILED(hr)) return hr;
 
-    Microsoft::WRL::ComPtr<IDXGIFactory> DxgiFactory;
+    ComPtr<IDXGIFactory> DxgiFactory;
     hr = DxgiAdapter->GetParent(IID_PPV_ARGS(&DxgiFactory));
     if (FAILED(hr)) return hr;
 
@@ -212,7 +212,7 @@ HRESULT KGraphicsDevice::CreateSwapChain(HWND InWindowHandle)
 HRESULT KGraphicsDevice::CreateRenderTargetView()
 {
     // Get back buffer from swap chain
-    Microsoft::WRL::ComPtr<ID3D11Texture2D> BackBuffer;
+    ComPtr<ID3D11Texture2D> BackBuffer;
     HRESULT hr = SwapChain->GetBuffer(0, IID_PPV_ARGS(&BackBuffer));
     if (FAILED(hr))
     {

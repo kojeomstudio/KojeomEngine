@@ -54,6 +54,9 @@ using GraphicsDevicePtr = std::unique_ptr<class GraphicsDevice>;
 using RendererPtr = std::unique_ptr<class Renderer>;
 using CameraPtr = std::unique_ptr<class Camera>;
 
+template <typename T>
+using ComPtr = Microsoft::WRL::ComPtr<T>;
+
 // Forward declarations
 class KEngine;
 class KGraphicsDevice;

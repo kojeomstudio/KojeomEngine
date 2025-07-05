@@ -81,15 +81,15 @@ private:
 
 private:
     EShaderType Type = EShaderType::Vertex;
-    Microsoft::WRL::ComPtr<ID3DBlob> Blob;
+    ComPtr<ID3DBlob> Blob;
 
     // Shader objects (only one is used depending on type)
-    Microsoft::WRL::ComPtr<ID3D11VertexShader> VertexShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader> PixelShader;
-    Microsoft::WRL::ComPtr<ID3D11GeometryShader> GeometryShader;
-    Microsoft::WRL::ComPtr<ID3D11HullShader> HullShader;
-    Microsoft::WRL::ComPtr<ID3D11DomainShader> DomainShader;
-    Microsoft::WRL::ComPtr<ID3D11ComputeShader> ComputeShader;
+    ComPtr<ID3D11VertexShader> VertexShader;
+    ComPtr<ID3D11PixelShader> PixelShader;
+    ComPtr<ID3D11GeometryShader> GeometryShader;
+    ComPtr<ID3D11HullShader> HullShader;
+    ComPtr<ID3D11DomainShader> DomainShader;
+    ComPtr<ID3D11ComputeShader> ComputeShader;
 };
 
 /**
@@ -145,5 +145,5 @@ public:
 
 private:
     std::vector<std::shared_ptr<KShader>> Shaders;
-    Microsoft::WRL::ComPtr<ID3D11InputLayout> InputLayout;
-}; 
+    ComPtr<ID3D11InputLayout> InputLayout;
+};
