@@ -87,15 +87,15 @@ private:
 
 private:
     // DirectX 11 Core Objects (ComPtr handles automatic resource management)
-    Microsoft::WRL::ComPtr<ID3D11Device> Device;
-    Microsoft::WRL::ComPtr<ID3D11DeviceContext> Context;
-    Microsoft::WRL::ComPtr<IDXGISwapChain> SwapChain;
-    Microsoft::WRL::ComPtr<ID3D11RenderTargetView> RenderTargetView;
+    ComPtr<ID3D11Device> Device;
+    ComPtr<ID3D11DeviceContext> Context;
+    ComPtr<IDXGISwapChain> SwapChain;
+    ComPtr<ID3D11RenderTargetView> RenderTargetView;
 
     // Device settings
     // Debug interface
 #ifdef _DEBUG
-    Microsoft::WRL::ComPtr<ID3D11Debug> Debug;
+    ComPtr<ID3D11Debug> Debug;
 #endif
 
     // Window handle

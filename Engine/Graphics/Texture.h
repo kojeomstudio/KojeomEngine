@@ -91,9 +91,9 @@ private:
     HRESULT CreateSamplerState(ID3D11Device* Device);
 
 private:
-    Microsoft::WRL::ComPtr<ID3D11Texture2D> Texture;
-    Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> ShaderResourceView;
-    Microsoft::WRL::ComPtr<ID3D11SamplerState> SamplerState;
+    ComPtr<ID3D11Texture2D> Texture;
+    ComPtr<ID3D11ShaderResourceView> ShaderResourceView;
+    ComPtr<ID3D11SamplerState> SamplerState;
 
     UINT32 Width = 0;
     UINT32 Height = 0;

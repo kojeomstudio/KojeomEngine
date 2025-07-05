@@ -127,7 +127,7 @@ private:
         )";
 
         // Compile vertex shader
-        Microsoft::WRL::ComPtr<ID3DBlob> vsBlob, psBlob, errorBlob;
+        ComPtr<ID3DBlob> vsBlob, psBlob, errorBlob;
         HRESULT hr = D3DCompile(vertexShaderSource, strlen(vertexShaderSource), 
                                nullptr, nullptr, nullptr, "main", "vs_4_0", 
                                0, 0, &vsBlob, &errorBlob);
@@ -272,14 +272,14 @@ private:
 
 private:
     // Shader resources
-    Microsoft::WRL::ComPtr<ID3D11VertexShader> m_vertexShader;
-    Microsoft::WRL::ComPtr<ID3D11PixelShader> m_pixelShader;
-    Microsoft::WRL::ComPtr<ID3D11InputLayout> m_inputLayout;
+    ComPtr<ID3D11VertexShader> m_vertexShader;
+    ComPtr<ID3D11PixelShader> m_pixelShader;
+    ComPtr<ID3D11InputLayout> m_inputLayout;
 
     // Geometry resources
-    Microsoft::WRL::ComPtr<ID3D11Buffer> m_vertexBuffer;
-    Microsoft::WRL::ComPtr<ID3D11Buffer> m_indexBuffer;
-    Microsoft::WRL::ComPtr<ID3D11Buffer> m_constantBuffer;
+    ComPtr<ID3D11Buffer> m_vertexBuffer;
+    ComPtr<ID3D11Buffer> m_indexBuffer;
+    ComPtr<ID3D11Buffer> m_constantBuffer;
 
     // Transformation matrix
     XMMATRIX m_worldMatrix = XMMatrixIdentity();

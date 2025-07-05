@@ -13,7 +13,7 @@ HRESULT KShader::LoadFromFile(ID3D11Device* Device, const std::wstring& Filename
     ShaderFlags |= D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
 
-    Microsoft::WRL::ComPtr<ID3DBlob> ErrorBlob;
+    ComPtr<ID3DBlob> ErrorBlob;
     std::string Profile = GetProfileString(InType);
 
     // Compile shader from file
@@ -64,7 +64,7 @@ HRESULT KShader::CompileFromString(ID3D11Device* Device, const std::string& Sour
     ShaderFlags |= D3DCOMPILE_SKIP_OPTIMIZATION;
 #endif
 
-    Microsoft::WRL::ComPtr<ID3DBlob> ErrorBlob;
+    ComPtr<ID3DBlob> ErrorBlob;
     std::string Profile = GetProfileString(InType);
 
     // Compile shader from string
